@@ -1,8 +1,28 @@
 version: "3"
 
 services:
+  db:
+    image: postgres
+    volumes:
+      - ./data/db:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
   app:
     command: "poetry run python ./manage.py runserver 0.0.0.0:8000"
     build: .
     ports:
       - "8000:8000"
+    environment:
+      - POSTGRES_NAME=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    volumes:
+      # Mount the code
+      - type: bind
+        source: ./
+        target: /hyperpersonalizer
+        read_only: false
+    depends_on:
+      - db
