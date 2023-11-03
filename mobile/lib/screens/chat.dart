@@ -4,7 +4,6 @@ import 'package:flutter_chat_types/flutter_chat_types.dart' as types;
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:uuid/uuid.dart';
 
-
 class ChatScreen extends StatefulWidget {
   const ChatScreen({Key? key}) : super(key: key);
 
@@ -15,7 +14,14 @@ class ChatScreen extends StatefulWidget {
 class _ChatScreenState extends State<ChatScreen> {
   final List<types.Message> _messages = [];
 
-  final List<types.User>  _users = [const types.User(id: '1',),const types.User(id: '2',)];
+  final List<types.User> _users = [
+    const types.User(
+      id: '1',
+    ),
+    const types.User(
+      id: '2',
+    )
+  ];
 
   void _handleSendPressed(types.PartialText message) {
     final textMessage = types.TextMessage(
@@ -43,19 +49,23 @@ class _ChatScreenState extends State<ChatScreen> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: const Color(0xFFC4161C),
-        leading: BackButton(onPressed: (){Navigator.pushReplacementNamed(context, '/home');},),
+        leading: BackButton(
+          onPressed: () {
+            Navigator.pushReplacementNamed(context, '/home');
+          },
+        ),
         title: const Text('Chat with '),
         centerTitle: true,
       ),
       body: Chat(
-          messages: _messages,
-          onSendPressed: _handleSendPressed,
-          user: _users[0],
+        messages: _messages,
+        onSendPressed: _handleSendPressed,
+        user: _users[0],
         theme: DefaultChatTheme(
           primaryColor: const Color(0xFFC4161C),
-          inputBorderRadius: BorderRadius.all(Radius.circular(18.r)) ,
+          inputBorderRadius: BorderRadius.all(Radius.circular(18.r)),
           inputMargin: EdgeInsets.symmetric(vertical: 10.h, horizontal: 8.h),
-            inputBackgroundColor: neutral0,
+          inputBackgroundColor: neutral0,
         ),
       ),
     );
