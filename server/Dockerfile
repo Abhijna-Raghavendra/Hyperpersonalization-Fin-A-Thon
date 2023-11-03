@@ -9,3 +9,5 @@ COPY . /hyperpersonalizer/
 RUN pip3 install poetry
 
 RUN poetry install
+
+RUN poetry run python ./manage.py makemigrations

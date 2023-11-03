@@ -9,8 +9,15 @@ services:
       - POSTGRES_DB=postgres
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
+    ports:
+      - "5432:5432"
+  migration:
+    build: .
+    command: bash -c 'while !</dev/tcp/db/5432; do sleep 1; done; poetry run python ./manage.py migrate'
+    depends_on:
+      - db
   app:
-    command: "poetry run python ./manage.py runserver 0.0.0.0:8000"
+    command: bash -c 'while !</dev/tcp/db/5432; do sleep 1; done; poetry run python ./manage.py runserver 0.0.0.0:8000'
     build: .
     ports:
       - "8000:8000"
