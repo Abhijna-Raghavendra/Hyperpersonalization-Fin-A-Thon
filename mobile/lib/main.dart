@@ -1,43 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:mobile/screens/home.dart';
+import 'package:mobile/screens/landing.dart';
+import 'package:mobile/screens/chat.dart';
 
-void main() {
-  runApp(const MobileApp());
-}
-
-class MobileApp extends StatelessWidget {
-  const MobileApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Hyperpersonalisation',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const LoginPage(),
-    );
-  }
-}
-
-class LoginPage extends StatelessWidget {
-  const LoginPage({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Center(child: Text('Hyperpersonalization App')),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: const <Widget>[
-            Text(
-              'Here comes the content...',
-            ),
-          ],
-        ),
-      ),
-    );
-  }
+Future main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  runApp(
+    ScreenUtilInit(
+        designSize: const Size(412, 732),
+        builder: (BuildContext context, child) => MaterialApp(
+              theme: ThemeData(fontFamily: 'Montserrat'),
+              routes: {
+                '/': (context) => const LandingScreen(),
+                '/home': (context) => const HomeScreen(),
+                '/chat': (context) => const ChatScreen(),
+              },
+            )),
+  );
 }
