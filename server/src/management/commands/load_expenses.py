@@ -18,7 +18,7 @@ class Command(BaseCommand):
 
             for row in reader:
                 print(row)
-                new_user=User.objects.get_or_create(phone_no=919896420171,name="ABC",mpin=22372)
+                new_user=User.objects.get_or_create(phone_no="919896420171",name="ABC",mpin=22372)
                 new_expense = Expenses(user=User.objects.get(phone_no=9896420171),
                             timestamp=row[1],
                             category=row[2],
