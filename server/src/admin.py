@@ -1,5 +1,8 @@
 from django.contrib import admin
-from src.models import *
-
+from .models import *
 # Register your models here.
-admin.site.register(Dumy)
+
+admin.site.register(User)
+admin.site.register(CreditScore)
+admin.site.register(Expenses)
+admin.site.register(dummy)
