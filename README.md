@@ -47,7 +47,17 @@ Figma design link - https://www.figma.com/file/qU5ZrWO12C5ttvf7uVycRF/SIB-Mirror
 
 Figma Prototype Link - https://www.figma.com/proto/qU5ZrWO12C5ttvf7uVycRF/SIB-Mirror%2B-Revamp?type=design&node-id=21-277&t=BEXbd0glpFTW5V01-0&scaling=min-zoom&page-id=21%3A276&starting-point-node-id=21%3A277
 
-### Setup
+## ANALYSING POSSIBLE REASONS FOR CHANGE
+We utilize the CIBIL score as our primary credit assessment parameter, which is generated on a monthly basis by CIBIL. Our application diligently tracks the user's CIBIL score each month, conducts a thorough analysis of the data, and employs our machine learning algorithm to offer insights into the potential reasons for fluctuations. These reasons may encompass late EMI payments, hard inquiries or loan applications, debt settlements, and more. Additionally, we provide users with pertinent educational articles on these subjects to guide them in boosting their credit score.
+
+## GRAPHICAL DEPICTION
+We also provide graphical representations of the evolving credit scores, enabling users to assess their credit performance throughout the year. If the graph exhibits a consistent downward trend with minor fluctuations, it may be indicative of high credit utilization ratios. In such cases, we offer suggestions for diversifying the credit mix.
+
+## CREDIT SCORE SIMULATOR
+Recognizing past mistakes is valuable, but it's equally important to equip users with the ability to make informed decisions. To address this need, we've developed a Credit Score Simulator. This simulator allows users to estimate their potential future credit scores based on the actions they plan to take.
+
+
+## Setup Repository
 
 1. Clone the repository
     ```sh
@@ -81,11 +91,13 @@ Figma Prototype Link - https://www.figma.com/proto/qU5ZrWO12C5ttvf7uVycRF/SIB-Mi
     *You should be able to see the application running on **port 8000***
 
 
-### Prototype-Demo
+## Prototype-Demo
 
-//Insert screenshots/videos of demo
+https://github.com/Abhijna-Raghavendra/Hyperpersonalization-Fin-A-Thon/assets/96530830/2f6a282c-3399-4bee-bc47-a0d9b666dd50
 
-### Contributors
+
+
+## Contributors
 |![Abhijna Raghavendra](https://github.com/Abhijna-Raghavendra.png?size=200)|![Anjali](https://github.com/anjaliagg1012.png?size=200)|![Manyana Tiwari](https://github.com/manyana72.png?size=200)|![Nishcay Garg](https://github.com/gargnishchay13.png?size=200)|![Singamsetti Vyusti](https://github.com/SVyusti.png?size=200)|
 |-------|-------|-------|-------|-------|
 | [Abhijna Raghavendra](https://github.com/Abhijna-Raghavendra) | [Anjali](https://github.com/anjaliagg1012) | [Manyana Tiwari](https://github.com/manyana72) | [Nishchay Garg](https://github.com/gargnishchay13) | [Vyusti Singamsetti](https://github.com/SVyusti) |
