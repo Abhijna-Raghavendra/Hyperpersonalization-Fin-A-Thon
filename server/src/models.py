@@ -6,11 +6,11 @@ PAST_DUE_DAYS_CHOICES=[("30 Days","30 Days"),("60 Days","60 Days"),("90 Days","9
 
 # Create your models here.
 class User(models.Model):
-    phone_no=models.BigIntegerField(primary_key=True)
+    phone_no=models.CharField(max_length=12,primary_key=True)
     name=models.CharField(max_length=250)
     mpin=models.IntegerField()
     def __str__(self):
-        return str(self.phone_no)
+        return self.phone_no
 
 class CreditScore(models.Model):
         user=models.ForeignKey(User,on_delete=models.CASCADE)
