@@ -5,9 +5,15 @@ from rest_framework import viewsets
 
 # Create your views here.
 
-def hello(request):
-    return HttpResponse("HELLO WORLD")
+class UserModelViewSet(viewsets.ModelViewSet):
+    queryset=User.objects.all()
+    serializer_class=UserSerializer
 
-class DumyModelViewSet(viewsets.ModelViewSet):
-    queryset=Dumy.objects.all()
-    serializer_class=DumySerializer
+class CreditScoreModelViewSet(viewsets.ModelViewSet):
+    queryset=CreditScore.objects.all()
+    serializer_class=CreditScoreSerializer
+
+
+class ExpensesModelViewSet(viewsets.ModelViewSet):
+    queryset=Expenses.objects.all()
+    serializer_class=ExpensesSerializer

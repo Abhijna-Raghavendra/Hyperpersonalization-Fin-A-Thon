@@ -6,7 +6,7 @@ services:
     volumes:
       - ./data/db:/var/lib/postgresql/data
     environment:
-      - POSTGRES_DB=postgres
+      - POSTGRES_DB=server
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
   app:
@@ -15,7 +15,7 @@ services:
     ports:
       - "8000:8000"
     environment:
-      - POSTGRES_NAME=postgres
+      - POSTGRES_NAME=server
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
     volumes:
