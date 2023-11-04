@@ -46,6 +46,7 @@ dependencies:
   fl_chart: ^0.62.0
   syncfusion_flutter_charts: ^21.2.4
   mobile_number: ^2.1.1
+  http: ^0.13.6
 
 flutter_native_splash:
   color: "#C4161C"
@@ -78,6 +79,8 @@ flutter:
     - assets/images/logo.png
     - assets/images/logo_white.png
     - assets/images/profile_img.png
+    - assets/images/quick_links.png
+    - assets/images/recharge_bills.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

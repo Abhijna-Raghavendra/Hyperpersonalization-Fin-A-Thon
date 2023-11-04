@@ -19,19 +19,36 @@ class InsightsWidget extends StatelessWidget {
       child: Column(
         children: [
           Padding(
-            padding: EdgeInsets.fromLTRB(24.h,15.h, 24.h,0,),
+            padding: EdgeInsets.fromLTRB(
+              24.h,
+              15.h,
+              24.h,
+              0,
+            ),
             child: Container(
               width: MediaQuery.of(context).size.width,
               height: 130.h,
-              decoration: const BoxDecoration(image: DecorationImage(image: AssetImage('assets/images/profile_img.png'),fit: BoxFit.fitWidth)),
+              decoration: const BoxDecoration(
+                  image: DecorationImage(
+                      image: AssetImage('assets/images/profile_img.png'),
+                      fit: BoxFit.fitWidth)),
               child: Padding(
                 padding: EdgeInsets.symmetric(vertical: 0, horizontal: 8.h),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text('Current Balance', style: TextStyle(color: Colors.white, fontSize: 20.sp),),
-                    Text('+₹ 1,00,000', style: TextStyle(color: Colors.white, fontSize: 28.sp, fontWeight: FontWeight.bold),),
+                    Text(
+                      'Current Balance',
+                      style: TextStyle(color: Colors.white, fontSize: 20.sp),
+                    ),
+                    Text(
+                      '+₹ 1,00,000',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 28.sp,
+                          fontWeight: FontWeight.bold),
+                    ),
                   ],
                 ),
               ),
@@ -147,14 +164,17 @@ class InsightsWidget extends StatelessWidget {
                                   explode: true,
                                   explodeIndex: 0,
                                   dataSource: _spendingSplit,
-                                  xValueMapper: (_SpendingSplit data, _) => data.category,
-                                  yValueMapper: (_SpendingSplit data, _) => data.value,
-                                  pointColorMapper: (_SpendingSplit data, _) => data.color,
-                                  dataLabelMapper: (_SpendingSplit data, _) => data.category,
-                                dataLabelSettings: const DataLabelSettings(isVisible: true)
-                              ),
-                            ]
-                        ),
+                                  xValueMapper: (_SpendingSplit data, _) =>
+                                      data.category,
+                                  yValueMapper: (_SpendingSplit data, _) =>
+                                      data.value,
+                                  pointColorMapper: (_SpendingSplit data, _) =>
+                                      data.color,
+                                  dataLabelMapper: (_SpendingSplit data, _) =>
+                                      data.category,
+                                  dataLabelSettings:
+                                      const DataLabelSettings(isVisible: true)),
+                            ]),
                       ],
                     ),
                   )),
