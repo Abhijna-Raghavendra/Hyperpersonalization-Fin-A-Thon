@@ -16,8 +16,14 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  final List<Widget> _widgets = [const HomeWidget(), const HomeWidget(), const CreditScoreWidget(), const InsightsWidget(),const OffersWidget()];
-  int i =0;
+  final List<Widget> _widgets = [
+    const HomeWidget(),
+    const HomeWidget(),
+    const CreditScoreWidget(),
+    const InsightsWidget(),
+    const OffersWidget()
+  ];
+  int i = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,9 +34,11 @@ class _HomeScreenState extends State<HomeScreen> {
         currentIndex: i,
         showUnselectedLabels: true,
         showSelectedLabels: true,
-        onTap: (int index){setState(() {
-          i = index;
-        });},
+        onTap: (int index) {
+          setState(() {
+            i = index;
+          });
+        },
         iconSize: 20.r,
         landscapeLayout: BottomNavigationBarLandscapeLayout.spread,
         items: const [
@@ -39,7 +47,9 @@ class _HomeScreenState extends State<HomeScreen> {
           BottomNavigationBarItem(
               icon: FaIcon(FontAwesomeIcons.wallet), label: 'payments'),
           BottomNavigationBarItem(
-              icon: FaIcon(FontAwesomeIcons.gaugeHigh), label: 'credit score', ),
+            icon: FaIcon(FontAwesomeIcons.gaugeHigh),
+            label: 'credit score',
+          ),
           BottomNavigationBarItem(
               icon: FaIcon(FontAwesomeIcons.lightbulb), label: 'insights'),
           BottomNavigationBarItem(

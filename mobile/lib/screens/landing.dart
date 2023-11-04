@@ -5,7 +5,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mobile_number/mobile_number.dart';
 import 'package:flutter/services.dart';
 
-
 class LandingScreen extends StatefulWidget {
   const LandingScreen({
     Key? key,
