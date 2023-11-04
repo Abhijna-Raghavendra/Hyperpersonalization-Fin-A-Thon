@@ -3,10 +3,16 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mobile/UI/appbar.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
   static List _routes = ['/home','/home','/credit','/insights','/offers'];
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,7 +28,7 @@ class HomeScreen extends StatelessWidget {
       bottomNavigationBar: BottomNavigationBar(
         showUnselectedLabels: true,
         showSelectedLabels: true,
-        onTap: (int index){Navigator.pushReplacementNamed(context, _routes[index]);},
+        onTap: (int index){Navigator.pushReplacementNamed(context, HomeScreen._routes[index]);},
         iconSize: 20.r,
         landscapeLayout: BottomNavigationBarLandscapeLayout.spread,
         items: const [

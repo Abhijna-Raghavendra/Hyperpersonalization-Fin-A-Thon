@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 import 'dart:async';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:mobile_number/mobile_number.dart';
+import 'package:flutter/services.dart';
+
 
 class LandingScreen extends StatefulWidget {
   const LandingScreen({
@@ -17,17 +20,42 @@ class LandingScreen extends StatefulWidget {
 
 class _LandingScreenState extends State<LandingScreen> {
   TextEditingController textEditingController = TextEditingController();
-
   StreamController<ErrorAnimationType>? errorController;
 
   bool hasError = false;
   String currentText = "";
   final formKey = GlobalKey<FormState>();
 
+  String _mobileNumber = '';
+
   @override
   void initState() {
     errorController = StreamController<ErrorAnimationType>();
     super.initState();
+    MobileNumber.listenPhonePermission((isPermissionGranted) {
+      if (isPermissionGranted) {
+        initMobileNumberState();
+      } else {}
+    });
+
+    initMobileNumberState();
+  }
+
+  Future<void> initMobileNumberState() async {
+    if (!await MobileNumber.hasPhonePermission) {
+      await MobileNumber.requestPhonePermission;
+      return;
+    }
+    try {
+      _mobileNumber = (await MobileNumber.mobileNumber)!;
+      _mobileNumber = _mobileNumber.split('+')[1];
+    } on PlatformException catch (e) {
+      debugPrint("Failed to get mobile number because of '${e.message}'");
+    }
+
+    if (!mounted) return;
+
+    setState(() {});
   }
 
   @override
@@ -37,7 +65,6 @@ class _LandingScreenState extends State<LandingScreen> {
     super.dispose();
   }
 
-  // snackBar Widget
   snackBar(String? message) {
     return ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
@@ -68,9 +95,9 @@ class _LandingScreenState extends State<LandingScreen> {
             ],
           ),
           Padding(
-            padding: EdgeInsets.symmetric(vertical: 12.h, horizontal: 18.h),
+            padding: EdgeInsets.symmetric(vertical: 18.h, horizontal: 18.h),
             child: Text(
-              'Hi ABC',
+              'Hi $_mobileNumber !',
               style: TextStyle(fontWeight: FontWeight.w800, fontSize: 32.sp),
             ),
           ),
@@ -82,7 +109,7 @@ class _LandingScreenState extends State<LandingScreen> {
             ),
           ),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 12.h, vertical: 4.h),
+            padding: EdgeInsets.symmetric(horizontal: 18.h, vertical: 4.h),
             child: Text(
               'Please enter your 6 - digit MPIN Number',
               style: TextStyle(fontSize: 18.sp),
