@@ -52,7 +52,11 @@ class _CreditScoreWidgetState extends State<CreditScoreWidget> {
         children: [
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 30.h, vertical: 8.h),
-            child: Text('Credit Score',style: TextStyle(fontSize: 30.sp),textAlign: TextAlign.left,),
+            child: Text(
+              'Credit Score',
+              style: TextStyle(fontSize: 30.sp),
+              textAlign: TextAlign.left,
+            ),
           ),
           ClipRect(
             child: Align(
@@ -144,14 +148,14 @@ class _CreditScoreWidgetState extends State<CreditScoreWidget> {
             child: SfCartesianChart(
                 plotAreaBorderWidth: 0,
                 primaryXAxis: CategoryAxis(
-                  axisLine: const AxisLine(width: 0),
+                    axisLine: const AxisLine(width: 0),
                     labelStyle: TextStyle(
                         fontSize: 14.sp,
                         fontWeight: FontWeight.bold,
                         color: const Color(0xFFC4161C)),
                     majorGridLines: const MajorGridLines(width: 0)),
                 primaryYAxis: NumericAxis(
-                  axisLine: const AxisLine(width: 0),
+                    axisLine: const AxisLine(width: 0),
                     minimum: creditScoreRange[0].start,
                     maximum: creditScoreRange[3].end,
                     labelStyle:
@@ -174,42 +178,84 @@ class _CreditScoreWidgetState extends State<CreditScoreWidget> {
                   )
                 ]),
           ),
-          Center(child: Text('Last few months Credit Score', style: TextStyle(fontSize: 16.sp),)),
+          Center(
+              child: Text(
+            'Last few months Credit Score',
+            style: TextStyle(fontSize: 16.sp),
+          )),
           Padding(
             padding: EdgeInsets.symmetric(vertical: 25.h, horizontal: 30.h),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text('Credit Factors', style: TextStyle(fontSize: 22.sp,fontWeight: FontWeight.w400),),
-                Text('Factors that affect your credit score', style: TextStyle(fontSize: 16.sp,fontWeight: FontWeight.w400),),
-                SizedBox(height:20.h),
-                Card(color: Colors.white70,child: SizedBox(
-                    width: MediaQuery.of(context).size.width,
-                    height: 50.h,
-                    child: Row(
-                      children: [
-                        Icon(Icons.date_range, color: const Color(0xFFC4161C),size: 40.r,),
-                        Text('On time payments',style: TextStyle(fontSize: 18.sp),),
-                      ],
-                    )),),
-                Card(color: Colors.white70,child: SizedBox(
-                    width: MediaQuery.of(context).size.width,
-                    height: 50.h,
-                    child: Row(
-                      children: [
-                        Icon(Icons.wallet, color: const Color(0xFFC4161C),size: 40.r,),
-                        Text('Credit Utilization',style: TextStyle(fontSize: 18.sp),),
-                      ],
-                    )),),
-                Card(color: Colors.white70,child: SizedBox(
-                    width: MediaQuery.of(context).size.width,
-                    height: 50.h,
-                    child: Row(
-                      children: [
-                        Icon(Icons.person_search, color: const Color(0xFFC4161C),size: 40.r,),
-                        Text('Hard Enquiry',style: TextStyle(fontSize: 18.sp),),
-                      ],
-                    )),)
+                Text(
+                  'Credit Factors',
+                  style:
+                      TextStyle(fontSize: 22.sp, fontWeight: FontWeight.w400),
+                ),
+                Text(
+                  'Factors that affect your credit score',
+                  style:
+                      TextStyle(fontSize: 16.sp, fontWeight: FontWeight.w400),
+                ),
+                SizedBox(height: 20.h),
+                Card(
+                  color: Colors.white70,
+                  child: SizedBox(
+                      width: MediaQuery.of(context).size.width,
+                      height: 50.h,
+                      child: Row(
+                        children: [
+                          Icon(
+                            Icons.date_range,
+                            color: const Color(0xFFC4161C),
+                            size: 40.r,
+                          ),
+                          Text(
+                            'On time payments',
+                            style: TextStyle(fontSize: 18.sp),
+                          ),
+                        ],
+                      )),
+                ),
+                Card(
+                  color: Colors.white70,
+                  child: SizedBox(
+                      width: MediaQuery.of(context).size.width,
+                      height: 50.h,
+                      child: Row(
+                        children: [
+                          Icon(
+                            Icons.wallet,
+                            color: const Color(0xFFC4161C),
+                            size: 40.r,
+                          ),
+                          Text(
+                            'Credit Utilization',
+                            style: TextStyle(fontSize: 18.sp),
+                          ),
+                        ],
+                      )),
+                ),
+                Card(
+                  color: Colors.white70,
+                  child: SizedBox(
+                      width: MediaQuery.of(context).size.width,
+                      height: 50.h,
+                      child: Row(
+                        children: [
+                          Icon(
+                            Icons.person_search,
+                            color: const Color(0xFFC4161C),
+                            size: 40.r,
+                          ),
+                          Text(
+                            'Hard Enquiry',
+                            style: TextStyle(fontSize: 18.sp),
+                          ),
+                        ],
+                      )),
+                )
               ],
             ),
           )
