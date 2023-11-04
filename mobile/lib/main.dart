@@ -16,8 +16,6 @@ Future main() async {
                 '/': (context) => const LandingScreen(),
                 '/home': (context) => const HomeScreen(),
                 '/chat': (context) => const ChatScreen(),
-                '/credit': (context) => const CreditScreen(),
-
               },
             )),
   );
