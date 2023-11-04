@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_gauges/gauges.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
@@ -25,7 +24,7 @@ class _CreditScreenState extends State<CreditScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const CustomAppBar(preferredSize: Size.fromHeight(70),),
+      appBar: const CustomAppBar(preferredSize: Size.fromHeight(70)),
       body: SingleChildScrollView(
         child: Column(
           children: [
