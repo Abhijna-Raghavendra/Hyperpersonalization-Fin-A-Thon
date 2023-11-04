@@ -5,6 +5,6 @@ class OffersWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Text('at offers');
+    return const Text('Under Development...');
   }
 }

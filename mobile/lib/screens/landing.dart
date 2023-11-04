@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mobile/utils/model_definitions.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 import 'dart:async';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
