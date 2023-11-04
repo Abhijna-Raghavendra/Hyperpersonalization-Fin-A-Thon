@@ -5,4 +5,3 @@ from .models import *
 admin.site.register(User)
 admin.site.register(CreditScore)
 admin.site.register(Expenses)
-admin.site.register(dummy)

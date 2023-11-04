@@ -35,9 +35,5 @@ class CreditScore(models.Model):
 class Expenses(models.Model):
     user=models.ForeignKey(User,on_delete=models.CASCADE)
     timestamp=models.DateTimeField(auto_now=False,auto_now_add=False)
-    transactor=models.CharField(max_length=100,null=True)
     expense=models.FloatField(default=0)
 
-class dummy(models.Model):
-    user=models.ForeignKey(User,on_delete=models.CASCADE)
-    timestamp=models.DateTimeField(auto_now=False,auto_now_add=False)
