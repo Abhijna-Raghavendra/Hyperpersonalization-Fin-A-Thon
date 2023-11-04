@@ -1,22 +1,35 @@
 # Hyperpersonalisation
 
 # Introduction
-In our pursuit to revolutionize the banking experience, we are committed to developing an innovative and efficient banking platform. This endeavor involves the integration of cutting-edge personalization algorithms, as well as the implementation of a robust data storage and retrieval middleware. 
+In our pursuit to revolutionize the banking experience, we are committed to developing an innovative and efficient banking platform. This involves the integration of cutting-edge personalization algorithms, as well as the implementation of a robust data storage and retrieval middleware. 
 
-The existing banking applications exhibit several significant shortcomings and areas in need of enhancement, which can potentially be exploited or lead to operational inefficiencies. In response, our primary objective is to address and rectify these issues by employing a secure middleware solution, powered by the Django framework, and fortified with multiple layers of encryption to ensure the highest level of data security.
+The existing banking applications exhibit several significant shortcomings and areas in need of enhancement, which can potentially be exploited or lead to operational inefficiencies. In response, we aim to rectify these issues by employing a secure middleware solution, powered by the Django framework, and fortified with multiple layers of encryption to ensure the highest level of data security.
 
-The existing banking applications exhibit several significant shortcomings and areas in need of enhancement, which can potentially be exploited or lead to operational inefficiencies. In response, our primary objective is to address and rectify these issues by employing a secure middleware solution, powered by the Django framework, and fortified with multiple layers of encryption to ensure the highest level of data security.
-Furthermore, we are introducing novel approaches to personalization, with a focus on delivering a significantly more user-friendly and intelligent platform for our customers. Our goal is to create a banking app that not only meets but exceeds the expectations of today's tech-savvy consumers, providing them with a seamless and personalized banking experience.
+Furthermore, we introduce novel approaches to personalization, with a focus on delivering a significantly more user-friendly and intelligent platform for our customers. Our goal is to create a banking app that not only meets but exceeds the expectations of today's tech-savvy consumers, providing them with a seamless and personalized banking experience.
 
 # Problems
 
-1. *Foster User-Centric Design*: To create a truly user-friendly banking app, it is essential to consider user research, personas, and user journey mapping. By understanding customer pain points, preferences, and behaviors, we aim to design an app that offers a seamless and intuitive user experience. This experience should adapt to individual users' financial goals and preferences, ensuring their needs are met effectively.
-2. *Personalized Insights and Recommendations*: The next challenge is to provide customers with detailed insights into their spending habits, breakdowns of spending categories, analyses of saving patterns, and tailored recommendations for various financial products, including credit cards, loans, investments, and money-saving strategies. The app should serve as a financial advisor, helping users make informed decisions.
-3. *Financial Goal Tracking and Visualization*: Users often struggle with tracking their financial goals. This problem can be solved by enabling tools for setting and tracking financial goals within the app. Users should be able to visualize their progress and receive notifications that keep them motivated and on track.
-4. *Enhanced Spending Analysis*: To better understand and manage their finances, users need access to interactive charts, categorization of expenses, and comparative analysis tools. These features will empower users to make more informed financial decisions.
-5. *AI-Powered Virtual Assistant*: Implementing an AI-driven virtual assistant is essential to enhance the customer experience. This virtual assistant should be capable of understanding natural language queries, providing personalized responses, and offering financial guidance, thereby creating a personalized and interactive banking experience.
-6. *Personalized Credit Score Monitoring*: In an era of financial awareness, users expect real-time credit score tracking, in-depth analysis, and personalized recommendations for improving their creditworthiness. This feature will help users make more informed decisions about their credit.
-7. *Security and Privacy*: Last but not least, security and privacy are paramount. The app should prioritize robust security measures to protect users' financial data and ensure secure transactions. It should adhere to the basic guidelines set by the Reserve Bank of India (RBI) to maintain the trust and confidence of users. 
+1. **User-Centric Design**:
+
+To create a truly user-friendly banking app, it is essential to consider user research, personas, and user journey mapping. By understanding customer pain points, preferences, and behaviors, we aim to design an app that offers a seamless and intuitive user experience. This experience should adapt to individual users' financial goals and preferences, ensuring their needs are met effectively.
+
+2. **Personalized Insights and Recommendations**:
+
+The next challenge is to provide customers with detailed insights into their spending habits, breakdowns of spending categories, analyses of saving patterns, and tailored recommendations for various financial products, including credit cards, loans, investments, and money-saving strategies. The app should serve as a financial advisor, helping users make informed decisions.
+
+3. **Financial Goal Tracking and Visualization**:
+ Users often struggle with tracking their financial goals. This problem can be solved by enabling tools for setting and tracking financial goals within the app. Users should be able to visualize their progress and receive notifications that keep them motivated and on track.
+
+4. **Enhanced Spending Analysis**:
+ To better understand and manage their finances, users need access to interactive charts, categorization of expenses, and comparative analysis tools. These features will empower users to make more informed financial decisions.
+
+5. **AI-Powered Virtual Assistant**: Implementing an AI-driven virtual assistant is essential to enhance the customer experience. This virtual assistant should be capable of understanding natural language queries, providing personalized responses, and offering financial guidance, thereby creating a personalized and interactive banking experience.
+
+6. **Personalized Credit Score Monitoring**:
+In an era of financial awareness, users expect real-time credit score tracking, in-depth analysis, and personalized recommendations for improving their creditworthiness. This feature will help users make more informed decisions about their credit, as well as provide tips to improve their score.
+
+7. **Security and Privacy**:
+Last but not least, security and privacy are paramount. The app should prioritize robust security measures to protect users' financial data and ensure secure transactions. It should adhere to the basic guidelines set by the Reserve Bank of India (RBI) to maintain the trust and confidence of users. 
 
 # Solution
 
