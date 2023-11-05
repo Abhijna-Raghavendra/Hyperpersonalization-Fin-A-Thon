@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mobile/utils/get_user.dart';
 import 'package:mobile/utils/model_definitions.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 import 'dart:async';
@@ -27,6 +28,7 @@ class _LandingScreenState extends State<LandingScreen> {
   final formKey = GlobalKey<FormState>();
 
   String _mobileNumber = '';
+  String _user = '';
 
   @override
   void initState() {
@@ -49,6 +51,8 @@ class _LandingScreenState extends State<LandingScreen> {
     try {
       _mobileNumber = (await MobileNumber.mobileNumber)!;
       _mobileNumber = _mobileNumber.split('+')[1];
+      UserData user = await fetchUser(_mobileNumber);
+      _user = user.name;
     } on PlatformException catch (e) {
       debugPrint("Failed to get mobile number because of '${e.message}'");
     }
@@ -97,7 +101,7 @@ class _LandingScreenState extends State<LandingScreen> {
           Padding(
             padding: EdgeInsets.symmetric(vertical: 18.h, horizontal: 18.h),
             child: Text(
-              'Hi $_mobileNumber !',
+              'Hi $_user !',
               style: TextStyle(fontWeight: FontWeight.w800, fontSize: 32.sp),
             ),
           ),

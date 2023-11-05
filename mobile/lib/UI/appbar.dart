@@ -3,7 +3,9 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   const CustomAppBar({Key? key, required this.preferredSize}) : super(key: key);
-  final preferredSize;
+  @override
+  final Size preferredSize;
+
   @override
   Widget build(BuildContext context) {
     return AppBar(

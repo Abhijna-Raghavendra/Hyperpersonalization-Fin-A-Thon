@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_chat_ui/flutter_chat_ui.dart';
 import 'package:flutter_chat_types/flutter_chat_types.dart' as types;
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:mobile/utils/get_response.dart';
 import 'package:uuid/uuid.dart';
 
 class ChatScreen extends StatefulWidget {
@@ -23,19 +24,19 @@ class _ChatScreenState extends State<ChatScreen> {
     )
   ];
 
-  void _handleSendPressed(types.PartialText message) {
+  void _handleSendPressed(types.PartialText message) async {
     final textMessage = types.TextMessage(
       author: _users[0],
       createdAt: DateTime.now().millisecondsSinceEpoch,
       id: const Uuid().v4(),
       text: message.text,
     );
-
+    String resp = await response(message.text);
     final replyMessage = types.TextMessage(
       author: _users[1],
       createdAt: DateTime.now().millisecondsSinceEpoch,
       id: const Uuid().v4(),
-      text: 'reply to ${message.text}',
+      text: resp,
     );
 
     setState(() {
@@ -54,7 +55,7 @@ class _ChatScreenState extends State<ChatScreen> {
             Navigator.pushReplacementNamed(context, '/home');
           },
         ),
-        title: const Text('Chat with '),
+        title: const Text('Chat with VAMAN'),
         centerTitle: true,
       ),
       body: Chat(
@@ -70,4 +71,9 @@ class _ChatScreenState extends State<ChatScreen> {
       ),
     );
   }
+}
+
+Future<String> response(String message) async {
+  String r = await getResponse(message);
+  return r;
 }
