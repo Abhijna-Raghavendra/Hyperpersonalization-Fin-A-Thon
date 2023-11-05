@@ -15,3 +15,6 @@ class ExpensesSerializer(serializers.ModelSerializer):
     class Meta:
         model=Expenses
         fields="__all__"
+
+class PredictionInputSerializer(serializers.Serializer):
+    saving = serializers.CharField(required=True, max_length=250)
