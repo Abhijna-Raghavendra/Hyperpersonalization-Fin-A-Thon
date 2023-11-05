@@ -7,7 +7,7 @@ class InsightsWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List<_SpendingSplit> _spendingSplit = [
+    List<_SpendingSplit> spendingSplit = [
       _SpendingSplit('Bills', const Color(0xFFFFAFAF), 10000),
       _SpendingSplit('Food', const Color(0xFFFF8C8C), 2000),
       _SpendingSplit('Grocery', const Color(0xFFFF6968), 1200),
@@ -163,7 +163,7 @@ class InsightsWidget extends StatelessWidget {
                               DoughnutSeries<_SpendingSplit, String>(
                                   explode: true,
                                   explodeIndex: 0,
-                                  dataSource: _spendingSplit,
+                                  dataSource: spendingSplit,
                                   xValueMapper: (_SpendingSplit data, _) =>
                                       data.category,
                                   yValueMapper: (_SpendingSplit data, _) =>

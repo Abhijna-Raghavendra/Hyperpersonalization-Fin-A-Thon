@@ -2,7 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class TransactionCard extends StatefulWidget {
-  const TransactionCard({Key? key, required this.icon, required this.value, required this.category}) : super(key: key);
+  const TransactionCard(
+      {Key? key,
+      required this.icon,
+      required this.value,
+      required this.category})
+      : super(key: key);
   final IconData icon;
   final double value;
   final String category;
@@ -11,7 +16,6 @@ class TransactionCard extends StatefulWidget {
 }
 
 class _TransactionCardState extends State<TransactionCard> {
-
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -32,10 +36,11 @@ class _TransactionCardState extends State<TransactionCard> {
                 style: TextStyle(fontSize: 18.sp, fontWeight: FontWeight.bold),
               ),
               Padding(
-                padding:  EdgeInsets.all(8.r),
+                padding: EdgeInsets.all(8.r),
                 child: Text(
                   '+₹${widget.value.toInt().toString()}',
-                  style: TextStyle(fontSize: 18.sp, fontWeight: FontWeight.bold),
+                  style:
+                      TextStyle(fontSize: 18.sp, fontWeight: FontWeight.bold),
                 ),
               ),
             ],

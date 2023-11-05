@@ -6,14 +6,12 @@ import 'package:mobile/utils/model_definitions.dart';
 
 class HomeWidget extends StatefulWidget {
   const HomeWidget({Key? key}) : super(key: key);
-
   @override
   State<HomeWidget> createState() => _HomeWidgetState();
 }
 
 class _HomeWidgetState extends State<HomeWidget> {
-
-  late Future<ExpenseData> exp1,exp2,exp3,exp4;
+  late Future<ExpenseData> exp1, exp2, exp3, exp4;
 
   @override
   void initState() {
@@ -23,6 +21,7 @@ class _HomeWidgetState extends State<HomeWidget> {
     exp4 = fetchExpenses('4');
     super.initState();
   }
+
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -50,7 +49,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      'User Name',
+                      'Username',
                       style: TextStyle(
                           color: Colors.white,
                           fontSize: 28.sp,
@@ -78,8 +77,12 @@ class _HomeWidgetState extends State<HomeWidget> {
             builder: (context, snapshot) {
               if (snapshot.hasData) {
                 return Padding(
-                  padding: EdgeInsets.symmetric(vertical: 5.h, horizontal: 20.h),
-                  child: TransactionCard(icon: Icons.monetization_on, value: snapshot.data!.expense, category: snapshot.data!.category),
+                  padding:
+                      EdgeInsets.symmetric(vertical: 5.h, horizontal: 20.h),
+                  child: TransactionCard(
+                      icon: Icons.monetization_on,
+                      value: snapshot.data!.expense,
+                      category: snapshot.data!.category),
                 );
               } else if (snapshot.hasError) {
                 return Text('${snapshot.error}');
@@ -92,8 +95,12 @@ class _HomeWidgetState extends State<HomeWidget> {
             builder: (context, snapshot) {
               if (snapshot.hasData) {
                 return Padding(
-                  padding: EdgeInsets.symmetric(vertical: 5.h, horizontal: 20.h),
-                  child: TransactionCard(icon: Icons.monetization_on, value: snapshot.data!.expense, category: snapshot.data!.category),
+                  padding:
+                      EdgeInsets.symmetric(vertical: 5.h, horizontal: 20.h),
+                  child: TransactionCard(
+                      icon: Icons.monetization_on,
+                      value: snapshot.data!.expense,
+                      category: snapshot.data!.category),
                 );
               } else if (snapshot.hasError) {
                 return Text('${snapshot.error}');
@@ -106,8 +113,12 @@ class _HomeWidgetState extends State<HomeWidget> {
             builder: (context, snapshot) {
               if (snapshot.hasData) {
                 return Padding(
-                  padding: EdgeInsets.symmetric(vertical: 5.h, horizontal: 20.h),
-                  child: TransactionCard(icon: Icons.monetization_on, value: snapshot.data!.expense, category: snapshot.data!.category),
+                  padding:
+                      EdgeInsets.symmetric(vertical: 5.h, horizontal: 20.h),
+                  child: TransactionCard(
+                      icon: Icons.monetization_on,
+                      value: snapshot.data!.expense,
+                      category: snapshot.data!.category),
                 );
               } else if (snapshot.hasError) {
                 return Text('${snapshot.error}');
@@ -120,8 +131,12 @@ class _HomeWidgetState extends State<HomeWidget> {
             builder: (context, snapshot) {
               if (snapshot.hasData) {
                 return Padding(
-                  padding: EdgeInsets.symmetric(vertical: 5.h, horizontal: 20.h),
-                  child: TransactionCard(icon: Icons.monetization_on, value: snapshot.data!.expense, category: snapshot.data!.category),
+                  padding:
+                      EdgeInsets.symmetric(vertical: 5.h, horizontal: 20.h),
+                  child: TransactionCard(
+                      icon: Icons.monetization_on,
+                      value: snapshot.data!.expense,
+                      category: snapshot.data!.category),
                 );
               } else if (snapshot.hasError) {
                 return Text('${snapshot.error}');
@@ -139,12 +154,3 @@ class _HomeWidgetState extends State<HomeWidget> {
     );
   }
 }
-
-class _TransactionData {
-  _TransactionData(this.category, this.icon, this.value);
-
-  final String category;
-  final IconData icon;
-  final double value;
-}
-
