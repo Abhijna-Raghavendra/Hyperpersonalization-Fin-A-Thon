@@ -8,4 +8,4 @@ router.register(r"User",UserModelViewSet,basename="User")
 router.register(r"CreditScore",CreditScoreModelViewSet,basename="CreditScore")
 router.register(r"Expenses",ExpensesModelViewSet,basename="Expenses")
 
-urlpatterns=router.urls
+urlpatterns=[path('predict/', PredictAPIView.as_view(), name='predict')]+router.urls
