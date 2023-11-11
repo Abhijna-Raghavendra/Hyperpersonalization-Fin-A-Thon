@@ -52,6 +52,8 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'core.wsgi.application'
 
+AUTH_USER_MODEL="src.User"
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
