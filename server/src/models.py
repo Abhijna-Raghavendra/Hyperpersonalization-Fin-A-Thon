@@ -1,14 +1,44 @@
 from django.db import models
 from .calculator import calculate_credit_score
+from django.contrib.auth.models import AbstractUser
+from django.contrib.auth.base_user import BaseUserManager
 
 LOAN_CHOICES=[("Auto Loan","Auto Loan"), ("Mortgage Loan","Mortgage Loan"), ("Other","Other")]
 PAST_DUE_DAYS_CHOICES=[("30 Days","30 Days"),("60 Days","60 Days"),("90 Days","90 Days")]
 
 # Create your models here.
-class User(models.Model):
-    phone_no=models.CharField(max_length=12,primary_key=True)
-    name=models.CharField(max_length=250)
-    mpin=models.IntegerField()
+class CustomUserManager(BaseUserManager):
+     use_in_migrations=True
+     def create_user(self,phone_no,name,password=None, is_staff=False,is_superuser=False,**extra_fields):
+        if not phone_no:
+             raise ValueError("phone_no must be provided")
+        if not name:
+             raise ValueError("name must be provided")
+        user=self.model(phone_no=phone_no,name=name,**extra_fields)
+        user.set_password(password)
+        user.is_active=True
+        user.is_staff=is_staff
+        user.is_superuser=is_superuser
+        user.save(self._db)
+        return user
+     
+     def create_superuser(self,phone_no,name,password,**extra_fields):
+          extra_fields.setdefault('is_staff',True)
+          extra_fields.setdefault('is_active',True)
+          extra_fields.setdefault('is_superuser',True)
+          return self.create_user(phone_no,name,password,**extra_fields)
+
+class User(AbstractUser):
+    phone_no=models.CharField(verbose_name="phone",max_length=12,unique=True,primary_key=True)
+    name=models.CharField(verbose_name="name",max_length=250,null=True)
+    password=models.CharField(verbose_name="mpin",max_length=100,null=True)
+    USERNAME_FIELD = 'phone_no'
+    REQUIRED_FIELDS = ['name']
+    username=None
+    first_name = None
+    last_name = None
+    objects=CustomUserManager()
+
     def __str__(self):
         return self.phone_no
 
